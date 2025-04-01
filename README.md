@@ -33,4 +33,64 @@ Implementamos el juego de buscaminas: el objetivo es despejar todas las casillas
 - Las coordenadas se expresan como (fila, columna), empezando desde 1
 - El jugador puede marcar cualquier casilla como mina, incluso si no contiene una
 
+```
+BUSCAMINAS
+  1 2 3 4 5 6
+1 _ _ _ _ _ _ 
+2 _ _ _ _ _ _ 
+3 _ _ _ _ _ _ 
+4 _ _ _ _ _ _ 
+5 _ _ _ _ _ _ 
+6 _ _ _ _ _ _ 
 
+[D]espejar o [M]arcar mina?
+
+```
+
+```
+BUSCAMINAS
+  1 2 3 4 5 6
+1 _ _ _ _ _ _ 
+2 _ _ _ _ _ _ 
+3 _ _ _ _ _ _ 
+4 _ _ _ _ _ _ 
+5 _ _ _ _ _ _ 
+6 _ _ _ _ _ _ 
+
+[D]espejar o [M]arcar mina? D
+
+Elija coordenada:
+> Fila: 3
+> Columna: 3
+
+Coordenada despejada
+
+BUSCAMINAS
+  1 2 3 4 5 6
+1 _ _ _ _ _ _ 
+2 _ _ _ _ _ _ 
+3 _ _ D _ _ _ 
+4 _ _ _ _ _ _ 
+5 _ _ _ _ _ _ 
+6 _ _ _ _ _ _ 
+
+[D]espejar o [M]arcar mina? M
+
+Elija coordenada:
+> Fila: 5
+> Columna: 4
+
+Coordenada marcada
+
+BUSCAMINAS
+  1 2 3 4 5 6
+1 _ _ _ _ _ _ 
+2 _ _ _ _ _ _ 
+3 _ _ D _ _ _ 
+4 _ _ _ _ M _ 
+5 _ _ _ _ _ _ 
+6 _ _ _ _ _ _ 
+
+[D]espejar o [M]arcar mina? M
+
+```
