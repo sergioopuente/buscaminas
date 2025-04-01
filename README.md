@@ -91,6 +91,6 @@ BUSCAMINAS
 5 _ _ _ _ _ _ 
 6 _ _ _ _ _ _ 
 
-[D]espejar o [M]arcar mina? M
+[D]espejar o [M]arcar mina?
 
 ```
