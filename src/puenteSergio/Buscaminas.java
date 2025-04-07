@@ -90,7 +90,7 @@ private boolean victoria;
 private int casillasDespejadas;
 
 public Buscaminas() {
-    // Constructor anterior...
+    
     juegoTerminado = false;
     victoria = false;
     casillasDespejadas = 0;
@@ -129,4 +129,54 @@ private void marcar(int fila, int columna) {
         marcado[fila][columna] = true;
         tablero[fila][columna] = MARCADO;
     }
+}
+public void jugar() {
+    Scanner scanner = new Scanner(System.in);
+
+    while (!juegoTerminado) {
+        mostrarTablero();
+
+        System.out.print("\n[D]espejar o [M]arcar mina? ");
+        String accion = scanner.nextLine().toUpperCase();
+
+        if (!accion.equals("D") && !accion.equals("M")) {
+            System.out.println("Opción no válida. Use D o M.");
+            continue;
+        }
+
+        System.out.println("\nElija coordenada:");
+        System.out.print("> Fila: ");
+        int fila = scanner.nextInt() - 1;
+        System.out.print("> Columna: ");
+        int columna = scanner.nextInt() - 1;
+        scanner.nextLine(); 
+
+        if (fila < 0 || fila >= TAMANO || columna < 0 || columna >= TAMANO) {
+            System.out.println("Coordenadas fuera de rango. Intente de nuevo.");
+            continue;
+        }
+
+        if (accion.equals("D")) {
+            despejar(fila, columna);
+            if (juegoTerminado && !victoria) {
+                System.out.println("\nMina???\nHas practiso?!?");
+                mostrarTableroCompleto();
+            } else if (victoria) {
+                System.out.println("\nEnhorísima: Un despejado todo el fashion!!!");
+                mostrarTableroCompleto();
+            } else {
+                System.out.println("\nCoordenada despejada");
+            }
+        } else {
+            marcar(fila, columna);
+            System.out.println("\nCoordenada marcada");
+        }
+    }
+
+    scanner.close();
+}
+
+public static void main(String[] args) {
+    Buscaminas juego = new Buscaminas();
+    juego.jugar();
 }
