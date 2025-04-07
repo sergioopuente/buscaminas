@@ -20,7 +20,7 @@ public class Buscaminas {
     }
 
     private void inicializarJuego() {
-        // Inicializar tablero vacío
+        
         for (int i = 0; i < TAMANO; i++) {
             for (int j = 0; j < TAMANO; j++) {
                 tablero[i][j] = CUBIERTO;
@@ -33,5 +33,18 @@ public class Buscaminas {
 
     public static void main(String[] args) {
         Buscaminas juego = new Buscaminas();
+    }
+}
+private void inicializarJuego() {
+  
+    Random rand = new Random();
+    int minasColocadas = 0;
+    while (minasColocadas < MINAS) {
+        int fila = rand.nextInt(TAMANO);
+        int columna = rand.nextInt(TAMANO);
+        if (!minas[fila][columna]) {
+            minas[fila][columna] = true;
+            minasColocadas++;
+        }
     }
 }
