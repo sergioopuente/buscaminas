@@ -48,3 +48,40 @@ private void inicializarJuego() {
         }
     }
 }
+private void mostrarTablero() {
+    System.out.println("\nBUSCAMINAS");
+    System.out.print("  ");
+    for (int i = 1; i <= TAMANO; i++) {
+        System.out.print(i + " ");
+    }
+    System.out.println();
+
+    for (int i = 0; i < TAMANO; i++) {
+        System.out.print((i + 1) + " ");
+        for (int j = 0; j < TAMANO; j++) {
+            System.out.print(tablero[i][j] + " ");
+        }
+        System.out.println();
+    }
+}
+
+private void mostrarTableroCompleto() {
+    System.out.println("\nTABLERO COMPLETO");
+    System.out.print("  ");
+    for (int i = 1; i <= TAMANO; i++) {
+        System.out.print(i + " ");
+    }
+    System.out.println();
+
+    for (int i = 0; i < TAMANO; i++) {
+        System.out.print((i + 1) + " ");
+        for (int j = 0; j < TAMANO; j++) {
+            if (minas[i][j]) {
+                System.out.print(MINA + " ");
+            } else {
+                System.out.print(tablero[i][j] + " ");
+            }
+        }
+        System.out.println();
+    }
+}
