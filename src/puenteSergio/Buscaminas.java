@@ -85,3 +85,48 @@ private void mostrarTableroCompleto() {
         System.out.println();
     }
 }
+private boolean juegoTerminado;
+private boolean victoria;
+private int casillasDespejadas;
+
+public Buscaminas() {
+    // Constructor anterior...
+    juegoTerminado = false;
+    victoria = false;
+    casillasDespejadas = 0;
+}
+
+private void despejar(int fila, int columna) {
+    if (marcado[fila][columna] || visible[fila][columna]) {
+        return;
+    }
+
+    if (minas[fila][columna]) {
+        juegoTerminado = true;
+        victoria = false;
+        return;
+    }
+
+    visible[fila][columna] = true;
+    tablero[fila][columna] = DESPEJADO;
+    casillasDespejadas++;
+
+    if (casillasDespejadas == (TAMANO * TAMANO - MINAS)) {
+        juegoTerminado = true;
+        victoria = true;
+    }
+}
+
+private void marcar(int fila, int columna) {
+    if (visible[fila][columna]) {
+        return;
+    }
+
+    if (marcado[fila][columna]) {
+        marcado[fila][columna] = false;
+        tablero[fila][columna] = CUBIERTO;
+    } else {
+        marcado[fila][columna] = true;
+        tablero[fila][columna] = MARCADO;
+    }
+}
