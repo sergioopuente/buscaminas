@@ -98,4 +98,27 @@ class CampoMinado {
         descubiertas[fila][columna] = true;
         mapa[fila][columna] = MINA;
     }
+    
+    public void macroDespejar(int fila, int columna) {
+    for (int dx = -1; dx <= 1; dx++) {
+        for (int dy = -1; dy <= 1; dy++) {
+            if (dx == 0 && dy == 0) continue;
+
+            int nuevaFila = fila + dx;
+            int nuevaCol = columna + dy;
+
+            if (enRango(nuevaFila, nuevaCol)) {
+                Casilla c = tablero[nuevaFila][nuevaCol];
+                if (!c.estaMarcada() && !c.estaRevelada()) {
+                    c.revelar();
+                }
+            }
+        }
+    }
+}
+
+private boolean enRango(int f, int c) {
+    return f >= 0 && f < tablero.length && c >= 0 && c < tablero[0].length;
+}
+
 }
