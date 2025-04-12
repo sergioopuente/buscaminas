@@ -17,7 +17,8 @@ public class Jugador {
 
         switch (accion) {
             case "d":
-                if (!tablero.despejar(fila, columna)) {
+            tablero.despejar(fila, columna);
+            {
                     vivo = false;
                 }
                 break;
