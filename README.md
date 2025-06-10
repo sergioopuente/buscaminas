@@ -94,3 +94,19 @@ BUSCAMINAS
 [D]espejar o [M]arcar mina?
 
 ```
+
+## Compilación y ejecución
+
+Para compilar el proyecto utilice el compilador de Java desde la carpeta `src`:
+
+```bash
+javac *.java
+```
+
+Esto generará los archivos `.class` en la misma carpeta. Para iniciar una partida ejecute:
+
+```bash
+java Buscaminas
+```
+
+El juego se desarrollará en la consola solicitando la acción y las coordenadas en cada turno.
