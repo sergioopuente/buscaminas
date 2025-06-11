@@ -3,6 +3,6 @@ public class Buscaminas {
         Console console = new Console();
         Jugador jugador = new Jugador(console);
         Juego juego = new Juego(jugador);
-        juego.iniciar();
+        juego.jugar();
     }
 }

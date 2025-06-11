@@ -5,7 +5,7 @@ public class Jugador {
         this.console = console;
     }
 
-    public char pedirAccion() {
+    public Accion pedirAccion() {
         return console.leerAccion();
     }
 
