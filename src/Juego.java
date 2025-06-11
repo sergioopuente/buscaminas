@@ -7,14 +7,14 @@ public class Juego {
         this.tablero = new Tablero();
     }
 
-    public void iniciar() {
+    public void jugar() {
         boolean victoria = false;
         boolean derrota = false;
         while (!victoria && !derrota) {
             tablero.mostrar();
-            char accion = jugador.pedirAccion();
+            Accion accion = jugador.pedirAccion();
             Coordenada coord = jugador.pedirCoordenada();
-            if (accion == 'D') {
+            if (accion == Accion.DESPEJAR) {
                 if (!tablero.despejar(coord)) {
                     derrota = true;
                 }

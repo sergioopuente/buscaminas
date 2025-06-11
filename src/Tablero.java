@@ -35,11 +35,11 @@ public class Tablero {
         int f = coord.getFila();
         int c = coord.getColumna();
         if (estados[f][c] == EstadoCasilla.MARCADA || estados[f][c] == EstadoCasilla.DESPEJADA) {
-            return true; // no efecto
+            return true;
         }
         if (minas[f][c]) {
             estados[f][c] = EstadoCasilla.DESPEJADA;
-            return false; // mina: derrota
+            return false;
         }
         estados[f][c] = EstadoCasilla.DESPEJADA;
         return true;
@@ -49,10 +49,10 @@ public class Tablero {
         int f = coord.getFila();
         int c = coord.getColumna();
         if (estados[f][c] == EstadoCasilla.DESPEJADA) {
-            return; // no se puede marcar
+            return;
         }
         if (estados[f][c] == EstadoCasilla.MARCADA) {
-            estados[f][c] = EstadoCasilla.CUBIERTA; // desmarcar
+            estados[f][c] = EstadoCasilla.CUBIERTA;
         } else {
             estados[f][c] = EstadoCasilla.MARCADA;
         }
@@ -97,7 +97,6 @@ public class Tablero {
         System.out.println();
     }
 
-    // For testing or to show mines at end
     public void revelarMinas() {
         System.out.println("Ubicacion de minas:");
         for (int i = 0; i < TAMANIO; i++) {
